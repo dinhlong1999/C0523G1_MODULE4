@@ -30,7 +30,18 @@ public class MailRepository implements IMailRepository {
     }
 
     @Override
-    public void editConfig( Mail mail) {
-        mailList.set(mail.getId(),mail);
+    public void editConfig(int id, Mail mail) {
+        mailList.set(id,mail);
+    }
+
+    @Override
+    public int findIndex(int id) {
+        for (int i = 0; i < mailList.size(); i++) {
+            if (mailList.get(i).getId() == id){
+                return i;
+            }
+
+        }
+        return 0;
     }
 }

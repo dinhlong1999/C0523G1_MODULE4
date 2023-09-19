@@ -39,14 +39,15 @@ public class MailController {
     }
 
     @GetMapping("/edit/{id}")
-    public String edit(@PathVariable int id, Model model){
+    public String showFormEdit(@PathVariable int id, Model model){
         Mail mail = mailService.searchMail(id);
         model.addAttribute("mail",mail);
         return "update";
     }
     @PostMapping("/edit")
     public String editConfig(@ModelAttribute Mail mail, RedirectAttributes redirectAttributes){
-        mailService.editConfig(mail);
+        int index = mailService.findIndex(mail.getId());
+        mailService.editConfig(index,mail);
         redirectAttributes.addFlashAttribute("message","Edit success");
         return "redirect:/showForm";
     }

@@ -22,7 +22,12 @@ public class MailService implements IMailService {
     }
 
     @Override
-    public void editConfig( Mail mail) {
-        mailRepository.editConfig(mail);
+    public void editConfig(int id, Mail mail) {
+        mailRepository.editConfig(id,mail);
+    }
+
+    @Override
+    public int findIndex(int id) {
+        return mailRepository.findIndex(id);
     }
 }
