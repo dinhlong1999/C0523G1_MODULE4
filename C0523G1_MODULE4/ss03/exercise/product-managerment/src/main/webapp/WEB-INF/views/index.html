@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div th:if="${!productList.isEmpty()}">
+        <h3>List of product</h3>
+        <div>
+            <a class="btn btn-primary" th:href="@{/product/create}" role="button">Add product</a>
+        </div>
+
+        <div th:if="${message}">
+            <span style="color: red" th:text="${message}"></span>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Describer</th>
+                <th>Producer</th>
+                <th rowspan="3">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product,status:${productList}">
+                <td th:text="${status.count}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.describer}"></td>
+                <td th:text="${product.producer}"></td>
+                <td>
+                    <a class="btn btn-primary" th:href="@{/product/edit/{id}(id=${product.id})}" role="button">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" th:href="@{/product/delete/{id}(id=${product.id})}"
+                       role="button">Delete</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" th:href="@{/product/view/{id}(id=${product.id})}" role="button">View</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:if="${productList.isEmpty()}">
+        <span>No have product</span>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+</script>
+</body>
+</html>
