@@ -7,6 +7,6 @@ import java.util.List;
 public interface IMailRepository {
     List<Mail> showAll();
     Mail searchMail(int id);
-    void editConfig(int id, Mail mail);
+    void editConfig( Mail mail);
     int findIndex(int id);
 }

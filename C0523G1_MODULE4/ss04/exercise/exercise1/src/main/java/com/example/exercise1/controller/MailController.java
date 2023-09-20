@@ -46,8 +46,8 @@ public class MailController {
     }
     @PostMapping("/edit")
     public String editConfig(@ModelAttribute Mail mail, RedirectAttributes redirectAttributes){
-        int index = mailService.findIndex(mail.getId());
-        mailService.editConfig(index,mail);
+//        int index = mailService.findIndex(mail.getId());
+        mailService.editConfig(mail);
         redirectAttributes.addFlashAttribute("message","Edit success");
         return "redirect:/showForm";
     }

@@ -7,7 +7,7 @@ import java.util.List;
 public interface IMailService {
     List<Mail> getAll();
     Mail searchMail(int id);
-    void editConfig(int id, Mail mail);
+    void editConfig(Mail mail);
 
     int findIndex(int id);
 }

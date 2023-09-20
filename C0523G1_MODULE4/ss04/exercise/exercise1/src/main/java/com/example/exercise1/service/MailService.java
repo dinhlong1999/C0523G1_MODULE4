@@ -22,8 +22,8 @@ public class MailService implements IMailService {
     }
 
     @Override
-    public void editConfig(int id, Mail mail) {
-        mailRepository.editConfig(id,mail);
+    public void editConfig(Mail mail) {
+        mailRepository.editConfig(mail);
     }
 
     @Override
