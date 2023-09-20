@@ -15,15 +15,22 @@
 <body>
 
 <div class="container">
-    <div th:if="${!productList.isEmpty()}">
+
         <h3>List of product</h3>
         <div>
             <a class="btn btn-primary" th:href="@{/product/create}" role="button">Add product</a>
         </div>
-
+        <div>
+            <form th:action="@{/product/search}" method="post">
+                <label for="nameSearch">Name product search</label>
+                <input type="text" id="nameSearch" name="name">
+                <input type="submit" value="search">
+            </form>
+        </div>
         <div th:if="${message}">
             <span style="color: red" th:text="${message}"></span>
         </div>
+    <div th:if="${!productList.isEmpty()}">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -43,23 +50,57 @@
                 <td th:text="${product.describer}"></td>
                 <td th:text="${product.producer}"></td>
                 <td>
-                    <a class="btn btn-primary" th:href="@{/product/edit/{id}(id=${product.id})}" role="button">Edit</a>
+                    <a class="btn btn-outline-primary" th:href="@{/product/edit/{id}(id=${product.id})}" role="button">Edit</a>
                 </td>
                 <td>
-                    <a class="btn btn-primary" th:href="@{/product/delete/{id}(id=${product.id})}"
-                       role="button">Delete</a>
+                    <button type="button" class="btn  btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal"
+                            th:onclick="|deleteProduct('${product.id}', '${product.name}')|">
+                        Delete
+                    </button>
                 </td>
                 <td>
-                    <a class="btn btn-primary" th:href="@{/product/view/{id}(id=${product.id})}" role="button">View</a>
+                    <a class="btn btn-outline-primary" th:href="@{/product/view/{id}(id=${product.id})}" role="button">View</a>
                 </td>
             </tr>
             </tbody>
         </table>
-    </div>
     <div th:if="${productList.isEmpty()}">
         <span>No have product</span>
     </div>
+    </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:action="@{/product/delete/}" method="post">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm delete</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="id" name="id">
+                    Do you want remove Product : <span id="name_delete"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function deleteProduct(id, name) {
+        document.getElementById("id").value = id;
+        document.getElementById("name_delete").innerText = name;
+    }
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

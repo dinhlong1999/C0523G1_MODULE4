@@ -1,13 +1,20 @@
 package com.example.productmanagerment.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private double price;
+    private int price;
     private String describer;
     private String producer;
 
-    public Product(int id, String name, double price, String describer, String producer) {
+    public Product(int id, String name, int price, String describer, String producer) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -34,11 +41,11 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
