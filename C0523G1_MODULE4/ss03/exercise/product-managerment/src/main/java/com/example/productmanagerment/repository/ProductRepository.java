@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,29 +31,43 @@ public class ProductRepository implements IProductRepository {
 
     @Transactional
     @Override
-    public void addProduct(Product product) {
+    public boolean addProduct(Product product) {
 //        products.add(product);
+        try {
             entityManager.persist(product);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
     }
     @Transactional
     @Override
-    public void updateProduct(int id, Product product) {
+    public boolean updateProduct(int id, Product product) {
 //        products.set(id,product);
-        Product productUpdate = searchById(id);
-        productUpdate.setName(product.getName());
-        productUpdate.setPrice(product.getPrice());
-        productUpdate.setDescriber(product.getDescriber());
-        productUpdate.setProducer(product.getProducer());
-        entityManager.merge(productUpdate);
+        try {
+            Product productUpdate = searchById(id);
+            productUpdate.setName(product.getName());
+            productUpdate.setPrice(product.getPrice());
+            productUpdate.setDescriber(product.getDescriber());
+            productUpdate.setProducer(product.getProducer());
+            entityManager.merge(productUpdate);
+        }catch (Exception e){
+            return false;
+        }
+       return true;
 
     }
     @Transactional
     @Override
-    public void deleteProduct(int id) {
+    public boolean deleteProduct(int id) {
 //        products.remove(id);
-        Product product = searchById(id);
-        entityManager.remove(product);
-
+        try {
+            Product product = searchById(id);
+            entityManager.remove(product);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -64,10 +77,10 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public Product searchByName(String name) {
-        TypedQuery<Product> query = entityManager.createQuery("from Product where name = :name",Product.class);
+    public List<Product> searchByName(String name) {
+        TypedQuery<Product> query = entityManager.createQuery("from Product where name like :name",Product.class);
         query.setParameter("name",name);
-        return query.getSingleResult();
+        return query.getResultList();
     }
 
 

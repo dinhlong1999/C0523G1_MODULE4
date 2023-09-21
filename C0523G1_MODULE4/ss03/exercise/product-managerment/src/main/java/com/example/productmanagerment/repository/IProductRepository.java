@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface IProductRepository {
     List<Product> getAll();
-    void addProduct(Product product);
-    void updateProduct(int id, Product product);
-    void deleteProduct(int id);
+    boolean addProduct(Product product);
+    boolean updateProduct(int id, Product product);
+    boolean deleteProduct(int id);
     Product searchById(int id);
-    Product searchByName(String name);
+    List<Product> searchByName(String name);
 
 }
