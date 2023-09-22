@@ -7,27 +7,41 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <h3>Nội dung Blog</h3>
     <div>
         <a class="btn btn-outline-warning" th:href="@{/blog}" role="button">Quay lại trang chủ</a>
     </div>
+    <div class="row">
+        <div class="col-md-6" >
 
-    <div>
-        <span>Tên tác giả: </span>
-        <span th:text="${blog.name}"></span>
-    </div>
-    <div>
-        <span>Chủ đề bài viết: </span>
-        <span th:text="${blog.topic}"></span>
-    </div>
-    <div>
-        <span>Ngày viết: </span>
-        <span th:text="${blog.date}"></span>
-    </div>
-    <div>
-        <span>Nội dung</span>
-        <span th:text="${blog.content}"></span>
+            <img th:src="${blog.images}" width="100%" height="600px" style="border-radius: 20px">
+        </div>
+        <div class="col-md-6">
+            <table>
+                <div style="border-radius: 20px">
+                    <span>Tên tác giả: </span>
+                    <span th:text="${blog.name}"></span>
+                </div>
+                <div>
+                    <span>Chủ đề bài viết: </span>
+                    <span th:text="${blog.topic}"></span>
+                </div>
+                <div>
+                    <span>Ngày viết: </span>
+                    <span th:text="${blog.date}"></span>
+                </div>
+                <div>
+                    <span>Loại blog: </span>
+                    <span th:text="${blog.category.name}"></span>
+                </div>
+                <div>
+                    <span>Nội dung: </span>
+                    <span th:text="${blog.content}"></span>
+                </div>
+            </table>
+
+        </div>
     </div>
 </div>
 

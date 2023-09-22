@@ -13,54 +13,46 @@
         <a class="btn btn-outline-warning" th:href="@{/blog}" role="button">Quay lại trang chủ</a>
     </div>
     <form th:action="@{/blog/create}" th:object="${blog}" method="post">
-    <table>
-        <tr>
-            <td><label for="name">Tên tác giả</label></td>
-            <td><input type="text" id="name" th:field="*{name}" placeholder="Nhập tên tác giả"></td>
-        </tr>
-        <tr>
-            <td><label for="topic">Chủ đề</label></td>
-            <td><input type="text" id="topic" th:field="*{topic}" placeholder="Nhập chủ đề"></td>
-        </tr>
-
-        <tr>
-            <td><label for="summary">Nội dung tóm tắt</label></td>
-            <td><input type="text" id="summary" th:field="*{summary}" placeholder="Nội dung tóm tắt"></td>
-        </tr>
-        <tr>
-            <td><label for="content">Nội dung bài viết</label></td>
-            <td><input type="text" id="content" th:field="*{content}" placeholder="Nhập nội dung bài viết"></td>
-        </tr>
-        <tr>
-            <td>
-                <button type="submit" class="btn btn-info">Lưu</button>
-            </td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <td><label for="name">Tên tác giả</label></td>
+                <td><input type="text" id="name" th:field="*{name}" placeholder="Nhập tên tác giả"></td>
+            </tr>
+            <tr>
+                <td><label for="topic">Chủ đề</label></td>
+                <td><input type="text" id="topic" th:field="*{topic}" placeholder="Nhập chủ đề"></td>
+            </tr>
+            <tr>
+                <td><label for="category">Loại blog</label></td>
+                <td>
+                    <select name="nameCategory" id="category" th:field="*{category}">
+                    <span th:each="list:${categoryList}">
+                    <option th:value="${list.id}" th:text="${list.name}"></option>
+                        </span>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="summary">Nội dung tóm tắt</label></td>
+                <td><input type="text" id="summary" th:field="*{summary}" placeholder="Nội dung tóm tắt"></td>
+            </tr>
+            <tr>
+                <td><label for="content">Nội dung bài viết</label></td>
+                <td><input type="text" id="content" th:field="*{content}" placeholder="Nhập nội dung bài viết"></td>
+            </tr>
+            <tr>
+                <td><label for="images">Upload hình</label></td>
+                <td><input type="file" id="images" th:field="*{images}" placeholder="Nhập hình ảnh bài viết"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-info">Lưu</button>
+                </td>
+            </tr>
+        </table>
     </form>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
