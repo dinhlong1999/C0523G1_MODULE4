@@ -19,8 +19,8 @@
         <th>Describer</th>
         <th>Producer</th>
     </tr>
-    <tr>
-        <td th:text="${product.id}"></td>
+    <tr th:each="product,status:${product}">
+        <td th:text="${status.count}"></td>
         <td th:text="${product.name}"></td>
         <td th:text="${product.price}"></td>
         <td th:text="${product.describer}"></td>
