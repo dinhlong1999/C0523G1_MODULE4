@@ -35,51 +35,53 @@ public class ProductRepository implements IProductRepository {
 //        products.add(product);
         try {
             entityManager.persist(product);
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
         return true;
     }
+
     @Transactional
     @Override
     public boolean updateProduct(int id, Product product) {
 //        products.set(id,product);
-        try {
-            Product productUpdate = searchById(id);
+        Product productUpdate = searchById(id);
+        if (productUpdate != null) {
             productUpdate.setName(product.getName());
             productUpdate.setPrice(product.getPrice());
             productUpdate.setDescriber(product.getDescriber());
             productUpdate.setProducer(product.getProducer());
             entityManager.merge(productUpdate);
-        }catch (Exception e){
+            return true;
+        } else {
             return false;
         }
-       return true;
 
     }
+
     @Transactional
     @Override
     public boolean deleteProduct(int id) {
 //        products.remove(id);
-        try {
-            Product product = searchById(id);
+        Product product = searchById(id);
+        if (product != null) {
             entityManager.remove(product);
-        }catch (Exception e){
+            return true;
+        }else {
             return false;
         }
-        return true;
     }
 
     @Override
     public Product searchById(int id) {
 //        return products.get(id);
-        return entityManager.find(Product.class,id);
+        return entityManager.find(Product.class, id);
     }
 
     @Override
     public List<Product> searchByName(String name) {
-        TypedQuery<Product> query = entityManager.createQuery("from Product where name like :name",Product.class);
-        query.setParameter("name",name);
+        TypedQuery<Product> query = entityManager.createQuery("from Product where name like :name", Product.class);
+        query.setParameter("name", name);
         return query.getResultList();
     }
 
