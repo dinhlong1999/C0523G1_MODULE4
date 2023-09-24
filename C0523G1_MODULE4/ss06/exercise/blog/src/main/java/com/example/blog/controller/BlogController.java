@@ -44,11 +44,13 @@ public class BlogController {
 //    }
     @GetMapping("")
     public ModelAndView showList(@RequestParam(defaultValue = "0", required = false) int page,
-                                 @RequestParam(defaultValue = "0", required = false) String nameSearch){
-        Pageable pageable = PageRequest.of(page,2, Sort.by("name").descending());
+                                 @RequestParam(defaultValue = "", required = false) String nameSearch){
+        Pageable pageable = PageRequest.of(page,2, Sort.by("date").ascending());
         Page<Blog> blogList = blogService.findBlogByNameContaining(pageable,nameSearch);
         ModelAndView modelAndView = new ModelAndView("index","blogList",blogList);
         modelAndView.addObject("nameSearch", nameSearch);
+        List<Category> categoryList = categoryService.findAll();
+        modelAndView.addObject("categoryList", categoryList);
         return modelAndView;
     }
 
@@ -61,6 +63,53 @@ public class BlogController {
         model.addAttribute("categoryList", categoryList);
         return "create";
     }
+    @GetMapping("/category")
+    public String showCategoryList(Model model){
+        List<Category> categoryList = categoryService.findAll();
+        model.addAttribute("categoryList",categoryList);
+        return "category";
+    }
+
+    @GetMapping("/category/create")
+    public String showFormCreateCategory(Model model){
+        model.addAttribute("category", new Category());
+        return "category-create";
+    }
+    @PostMapping("/category/create")
+    public String saveCategory(@ModelAttribute Category category, RedirectAttributes redirectAttributes){
+        categoryService.addCategory(category);
+        redirectAttributes.addFlashAttribute("message","Thêm mới thành công");
+        return "redirect:/blog/category";
+    }
+    @GetMapping("{id}/category/detail")
+    public String showCategoryDetail(@PathVariable int id, Model model){
+        List<Blog> blogList = blogService.searchBlogByCategory_Id(id);
+        model.addAttribute("blogList",blogList);
+        return "category-detail";
+    }
+    @PostMapping("/category/delete")
+    public String deleteCategory(@RequestParam int id , RedirectAttributes redirectAttributes){
+        categoryService.delete(id);
+        redirectAttributes.addFlashAttribute("message","Xoá thành công");
+        return "redirect:/blog/category";
+    }
+
+    @GetMapping("{id}/category/edit")
+    public String showFormEditCategory(@PathVariable int id, Model model){
+        Category category = categoryService.findById(id);
+        model.addAttribute("category",category);
+        return "category-edit";
+    }
+    @PostMapping ("/category/edit")
+    public String editCategory(@ModelAttribute Category category, RedirectAttributes redirectAttributes){
+        categoryService.addCategory(category);
+        redirectAttributes.addFlashAttribute("message"," Sửa thành công");
+        return "redirect:/blog/category";
+
+    }
+
+
+
     @PostMapping("/create")
     public String save(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes){
         blog.setDate(LocalDate.now());

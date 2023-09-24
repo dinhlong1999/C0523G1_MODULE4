@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h3 style="text-align: center">Thêm mới</h3>
+    <div style="color: red " th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+    <div>
+        <a class="btn btn-outline-warning" th:href="@{/blog/category}" role="button">Quay lại Danh mục</a>
+    </div>
+    <form th:action="@{/blog/category/create}" th:object="${category}" method="post">
+        <table>
+            <tr>
+                <td><label for="name">Tên danh mục cần thêm</label></td>
+                <td><input type="text" id="name" th:field="*{name}" placeholder="Vui lòng nhập tên"></td>
+            </tr>
+            <td>
+                <input type="submit" value="Save">
+            </td>
+        </table>
+    </form>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

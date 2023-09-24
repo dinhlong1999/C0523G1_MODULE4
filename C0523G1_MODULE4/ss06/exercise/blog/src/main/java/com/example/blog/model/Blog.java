@@ -15,7 +15,7 @@ public class Blog {
     private String summary;
     private String images;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
