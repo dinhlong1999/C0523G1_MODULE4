@@ -16,7 +16,7 @@ public class Category {
         this.name = name;
     }
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Blog> blogList;
 
     public Category() {
