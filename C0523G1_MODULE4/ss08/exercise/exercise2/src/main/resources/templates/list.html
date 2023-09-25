@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of song</title>
+</head>
+<body>
+<h3>
+    List of song
+</h3>
+<div>
+    <a th:href="@{/create}">Create a song</a>
+</div>
+<div th:if="${message}" th:text="${message}">
+</div>
+<table border="1px">
+    <tr>
+        <th>No.</th>
+        <th>Song</th>
+        <th>Singer</th>
+        <th>Kind of music</th>
+    </tr>
+    <tr th:each="song,status: ${songList}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${song.getName()}"></td>
+        <td th:text="${song.getSinger()}"></td>
+        <td th:text="${song.getKindOfMusic()}"></td>
+    </tr>
+</table>
+</body>
+</html>

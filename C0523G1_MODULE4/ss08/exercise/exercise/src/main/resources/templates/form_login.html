@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h3>Login</h3>
+
+<form th:action="@{/login/save}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <th><label for="firstName">First Name</label></th>
+            <th><input type="text" id="firstName" th:field="*{firstName}"></th>
+            <th style="color:red;" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></th>
+        </tr>
+        <tr>
+            <th><label for="lastName">Last name</label></th>
+            <th><input type="text" id="lastName" th:field="*{lastName}"></th>
+            <th style="color:red;" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></th>
+        </tr>
+        <tr>
+            <th><label for="age">Age</label></th>
+            <th><input type="text" id="age" th:field="*{age}"></th>
+            <th style="color:red;" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></th>
+        </tr>
+        <tr>
+            <th><label for="email">Email</label></th>
+            <th><input type="text" id="email" th:field="*{email}"></th>
+            <th style="color:red;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></th>
+        </tr>
+        <tr>
+            <th><label for="phoneNumber">Phone number</label></th>
+            <th><input type="text" id="phoneNumber" th:field="*{phoneNumber}"></th>
+            <th style="color:red;" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></th>
+        </tr>
+        <tr>
+            <td><input type="submit" value="login"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

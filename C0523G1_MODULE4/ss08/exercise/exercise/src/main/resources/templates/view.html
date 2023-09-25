@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+<a th:href="@{/login}">Back to login</a>
+<h1>Login success</h1>
+<table>
+    <tr>
+        <td>First name</td>
+        <td th:text="${user.firstName}"></td>
+    </tr>
+    <tr>
+        <td>Last name</td>
+        <td th:text="${user.lastName}"></td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td th:text="${user.age}"></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td th:text="${user.email}"></td>
+    </tr>
+
+</table>
+</body>
+</html>
