@@ -71,7 +71,7 @@ public class SongDTO implements Validator {
             errors.rejectValue("singer", null, "Must not contain special characters");
         }else if (songDTO.getKindOfMusic().equals("")){
             errors.rejectValue("kindOfMusic",null,"Kind of music title cannot be empty");
-        } else if (!songDTO.getKindOfMusic().matches("^[A-Z0-9a-z,//s]{1,1000}")) {
+        } else if (!songDTO.getKindOfMusic().matches("^[A-Z0-9a-z,//s]{1,1000}$")) {
             errors.rejectValue("kindOfMusic", null, "Must not contain special characters");
         }
     }

@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -43,8 +44,28 @@ public class SongController {
         Song song = new Song();
         BeanUtils.copyProperties(songDTO,song);
         songService.save(song);
-        redirectAttributes.addFlashAttribute("message","ok");
+        redirectAttributes.addFlashAttribute("message","Create success");
         return "redirect:/list";
 
+    }
+    @GetMapping("/song/{id}/edit")
+    public String showFormEdit(@PathVariable int id, Model model){
+        Song song = songService.findById(id);
+        SongDTO songDTO = new SongDTO();
+        BeanUtils.copyProperties(song,songDTO);
+        model.addAttribute("songDTO",songDTO );
+        return "edit";
+    }
+    @PostMapping("/song/edit")
+    public String edit(@Valid @ModelAttribute SongDTO songDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+        new SongDTO().validate(songDTO,bindingResult);
+        if (bindingResult.hasErrors()){
+            return "edit";
+        }
+        Song song = new Song();
+        BeanUtils.copyProperties(songDTO,song);
+        songService.save(song);
+        redirectAttributes.addFlashAttribute("message","Edit success");
+        return "redirect:/list";
     }
 }
