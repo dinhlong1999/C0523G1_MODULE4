@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Song {
@@ -11,9 +12,13 @@ public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    @NotNull
     private String name;
+
+    @NotNull
     private String singer;
+
+    @NotNull
     private String kindOfMusic;
 
     public Song(int id, String name, String singer, String kindOfMusic) {

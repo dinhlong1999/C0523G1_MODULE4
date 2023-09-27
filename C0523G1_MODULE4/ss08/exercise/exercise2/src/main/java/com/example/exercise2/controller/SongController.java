@@ -1,7 +1,7 @@
 package com.example.exercise2.controller;
 
 import com.example.exercise2.model.Song;
-import com.example.exercise2.model.SongDTO;
+import com.example.exercise2.dto.SongDTO;
 import com.example.exercise2.service.ISongService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

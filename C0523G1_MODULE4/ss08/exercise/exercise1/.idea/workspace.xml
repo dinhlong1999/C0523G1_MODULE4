@@ -58,6 +58,7 @@
       <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/exercise/blog/src/main/java/com/example/blog/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/exercise/blog/src/main/java/com/example/blog/model/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss08/exercise/exercise2/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss08/exercise/exercise2/src/main/resources/templates/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +86,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/C0523G1_MODULE4/ss08/exercise/exercise",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -97,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695625819802</updated>
       <workItem from="1695625820789" duration="111000" />
+      <workItem from="1695783283014" duration="24000" />
     </task>
     <servers />
   </component>

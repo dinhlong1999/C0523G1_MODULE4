@@ -1,37 +1,34 @@
-package com.example.exercise.model;
+package com.example.exercise.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
-@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserDTO {
     private int id;
-
+    @Size(min = 5,max = 45, message = "First name have minimum 5 character and maximum is 45 character")
     private String firstName;
-
+    @Size(min = 5,max = 45, message = "Last name have minimum 5 character and maximum is 45 character")
     private String lastName;
-
+    @Pattern(regexp = "^[0][0-9]{9}$", message = "Phone number must start 0 and have 10 numbers")
     private String phoneNumber;
-
-    private int age;
-
+    @Min(value = 18, message = "Age have larger than 18")
+    private String age;
+    @Email
     private String email;
 
-    public User(int id, String firstName, String lastName, String phoneNumber, int age, String email) {
+    public UserDTO() {
+
+    }
+
+    public UserDTO(int id, String firstName, String lastName, String phoneNumber, String age, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.age = age;
         this.email = email;
-    }
-
-    public User() {
     }
 
     public int getId() {
@@ -66,11 +63,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

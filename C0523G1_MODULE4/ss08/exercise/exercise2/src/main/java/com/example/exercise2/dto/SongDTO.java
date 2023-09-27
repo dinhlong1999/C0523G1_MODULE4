@@ -1,4 +1,4 @@
-package com.example.exercise2.model;
+package com.example.exercise2.dto;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
