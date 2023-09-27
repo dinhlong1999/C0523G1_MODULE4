@@ -9,11 +9,25 @@
         body{
             background-color: rgb(252, 224, 155);
         }
+        b{
+            color: red;
+        }
     </style>
 </head>
 <body>
-<h3 style="text-align: center"> TIỆM SÁCH NHỎ</h3>
 <div class="container">
+    <h3 style="text-align: center"> TIỆM SÁCH NHỎ</h3>
+    <div>
+        <form th:action="@{bookstore/give}" method="post">
+            <label>Trả sách</label>
+            <input type="text"  name="code" placeholder="Nhập mã code vào đây"><br>
+            <input type="submit" value="Gửi">
+        </form>
+    </div>
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+
     <div class="row">
         <div class="col-md-3" th:each="book: ${bookList}">
             <div class="card" style= "width: 100%">
@@ -24,11 +38,7 @@
                     </h5>
                     <h5 class="card-title"  style="text-align: center" th:text="${book.name}">
                     </h5>
-                    <B class="card-title" >
-                        SỐ LƯỢNG:
-                    </B>
-                    <p class="card-text" th:text="${book.quantity}"></p>
-                    <a th:href="@{/bookStore/detail(id=${book.id})}" class="btn btn-outline-success" style="text-align: center">Chi tiết</a>
+                        <a th:href="@{/bookstore/detail(id=${book.id})}" class="btn btn-outline-success" >Chi tiết</a>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
 <div class="container">
 
     <h3 STYLE="text-align: center">THUÊ SÁCH</h3>
-    <a th:href="@{/bookStore/}" class="btn btn-outline-primary">Quay về trang chủ</a>
+    <a th:href="@{/bookstore/}" class="btn btn-outline-primary">Quay về trang chủ</a>
     <div class="row">
         <div class="col-md-6">
             <img th:src="${book.images}" style="width: 100%;height: 600px">
@@ -31,10 +31,7 @@
                     <p th:text="${book.content}" id="content"></p>
                 </div>
                 <div>
-                    <label>Số lượng: 1</label>
-                </div>
-                <div>
-                    <a th:href="@{/bookStore/rent(id=${book.id})}" class="btn btn-outline-danger" style="text-align: center">Thuê sách</a>
+                    <a th:href="@{/bookstore/rent(id=${book.id})}" class="btn btn-outline-danger" style="text-align: center">Thuê sách</a>
                 </div>
             </div>
         </div>

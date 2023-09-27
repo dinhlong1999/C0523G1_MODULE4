@@ -15,4 +15,9 @@ public class BillService implements IBillService{
     public void save(Bill bill) {
         billRepository.save(bill);
     }
+
+    @Override
+    public Bill getBillByCode(int code) {
+        return billRepository.getBillByCode(code);
+    }
 }

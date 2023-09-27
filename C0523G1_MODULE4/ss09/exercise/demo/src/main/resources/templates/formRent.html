@@ -16,40 +16,29 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h3>Thông tin sách</h3>
-            <table>
-                <tr>
-                    <td>Tên sách:</td>
-                    <td th:text="${book.name}"></td>
-                </tr>
-                <tr>
-                    <td>Số lượng:</td>
-                    <td>1</td>
-                </tr>
-            </table>
-        </div>
-        <div class="col-md-6">
-            <h3>Nhập thông tin người thuê</h3>
-            <form th:action="@{/bookStore/save/bill}" th:object="${bill}" method="post">
-                <input th:field="*{id}" type="hidden"  th:value="${book.id}" name="bookId">
-                <table>
-                    <tr>
-                        <th>
-                            <label for="name">Tên người thuê:</label>
-                        </th>
-                        <th>
-                            <input type="text" id="name" th:field="*{customerName}" >
-                        </th>
-                        <th>
-                            <input type="submit" value="thuê">
-                        </th>
-                    </tr>
-                </table>
-            </form>
-        </div>
-    </div>
+    <h3>Xác nhận thuê sách</h3>
+    <form th:action="@{/bookstore/save/bill}" th:object="${bill}"  method="post">
+        <table  class="table table-success table-striped-columns">
+            <tr>
+                <td><label for="nameBook">Tên sách :</label></td>
+                <td><span  th:field="*{book}" th:value="${book.id}"  th:text="${book.name}" id="nameBook"/></td>
+                <input type="hidden" th:value="${book.id}" name="bookId">
+            </tr>
+            <tr>
+                <td><label for="quantity">Số lượng:</label></td>
+                <td><input type="number" id="quantity" th:field="*{quantity}"></td>
+            </tr>
+            <tr>
+                <td><label for="nameCustomer">Tên người thuê: </label></td>
+                <td><input type="text"  id="nameCustomer" placeholder="Nhập tên " th:field="*{customerName}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Thuê "></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+
 
 </div>
 

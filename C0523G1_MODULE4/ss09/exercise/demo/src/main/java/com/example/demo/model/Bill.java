@@ -18,6 +18,7 @@ public class Bill {
     @Column(name = "customer_name" ,columnDefinition = "varchar(255) not null")
     private String customerName;
 
+    private int status;
     @OneToOne
     @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
@@ -73,5 +74,13 @@ public class Bill {
 
     public void setBook(Book book) {
         this.book = book;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: rgb(252, 224, 155);
+        }
+        h3{
+            text-align: center;
+        }
+        b{
+            color: red;
+        }
+        h1{
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>MƯỢN THÀNH CÔNG</h1>
+    <a th:href="@{/bookstore/}" class="btn btn-outline-primary">Quay về trang chủ</a>
+    <h3>Hoá đơn</h3>
+    <table class="table table-striped table-hover" border="1px" >
+        <tr>
+            <td>Tên người mượn</td>
+            <td th:text="${bill.customerName}"></td>
+        </tr>
+        <tr>
+            <td>Tên sách</td>
+            <td th:text="${bill.book.name}"></td>
+        </tr>
+        <tr>
+            <td>Mã mượn sách</td>
+            <td th:text="${bill.code}"></td>
+        </tr>
+        <tr>
+            <td>Số lượng</td>
+            <td th:text="${bill.quantity}"></td>
+        </tr>
+    </table>
+    <b> Lưu ý: Nhớ mã mượn sách để có thể trả sách</b>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>
