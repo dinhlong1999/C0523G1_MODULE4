@@ -9,10 +9,6 @@ public class CartDTO {
     public CartDTO() {
     }
 
-    public CartDTO(Map<ProductDTO, Integer> productDTOs) {
-        this.productDTOs = productDTOs;
-    }
-
     public Map<ProductDTO, Integer> getProductDTOs() {
         return productDTOs;
     }
@@ -20,11 +16,12 @@ public class CartDTO {
     public void setProductDTOs(Map<ProductDTO, Integer> productDTOs) {
         this.productDTOs = productDTOs;
     }
+
     public void addProduct(ProductDTO productDTO){
-        if (productDTOs.containsKey(productDTO)) {
-            int currentItem = productDTOs.get(productDTO);
-            productDTOs.replace(productDTO,currentItem + 1);
-        }else {
+        if (productDTOs.containsKey(productDTO)){
+            int valueNew = productDTOs.get(productDTO);
+            productDTOs.replace(productDTO,valueNew +1);
+        }else{
             productDTOs.put(productDTO,1);
         }
     }
@@ -45,5 +42,9 @@ public class CartDTO {
             payment +=entry.getKey().getSalePrice()  * entry.getValue();
         }
         return payment;
+    }
+    public void deleteProduct(ProductDTO productDTO){
+        productDTOs.remove(productDTO);
+
     }
 }

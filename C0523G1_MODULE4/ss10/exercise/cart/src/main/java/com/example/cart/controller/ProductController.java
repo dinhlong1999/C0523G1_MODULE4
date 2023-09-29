@@ -50,5 +50,15 @@ public class ProductController {
         }
         return "redirect:/cart";
     }
+    @GetMapping("/remove")
+    public String remove(@RequestParam int id, @SessionAttribute(value = "cart") CartDTO cartDTO){
+        Product product = productService.findById(id);
+        if (product != null){
+            ProductDTO productDTO = new ProductDTO();
+            BeanUtils.copyProperties(product,productDTO);
+            cartDTO.deleteProduct(productDTO);
+        }
+        return "redirect:/cart";
+    }
 
 }

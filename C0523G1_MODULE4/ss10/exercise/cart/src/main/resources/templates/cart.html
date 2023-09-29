@@ -31,11 +31,14 @@
 <body>
 <div class="container">
     <h2>Chi tiết hoá đơn
-        <i style="color: black" class='bx bxs-cart-alt'></i>
+        <i style="color: black" class='bx bxs-cart-alt' th:href="@{/cart}"></i>
         <span style="margin: 14px -127px;font-size: 11px;"
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" th:text="${cart.countProductQuantity()}">
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" th:text="${cart.countItemQuantity()}">
         </span>
     </h2>
+    <div>
+        <a class="btn btn-primary" th:href="@{/product}" role="button">Quay về trang chủ</a>
+    </div>
     <table class="table table-bordered border-primary">
         <tr>
             <td>STT</td>
@@ -43,13 +46,19 @@
             <td>Hình ảnh</td>
             <td>Giá </td>
             <td>Số lượng</td>
+            <td></td>
         </tr>
-        <tr th:each="product,status: ${cart.productDTOs}">
+        <tr th:each="product,status: ${cart.getProductDTOs()}">
             <td th:text="${status.count}"></td>
             <td th:text="${product.key.getNameProduct()}"></td>
             <td><img th:src="${product.key.getImages()}"></td>
             <td th:text="${product.key.getSalePrice()}"></td>
-            <td th:text="${product.key.getQuantity()}"></td>
+            <td th:text="${product.getValue()}"></td>
+            <td><a class="btn btn-outline-danger" th:href="@{/product/remove/(id=${product.key.getId()})}"><i style="font-size: 20px" class='bx bxs-trash'></i></a></td>
+        </tr>
+        <tr>
+            <td colspan="4">Tổng Cộng</td>
+            <td  th:text="${#numbers.formatDecimal(cart.countTotalPayment(),0,'COMMA',0,'POINT')} +' VND'"></td>
         </tr>
     </table>
 

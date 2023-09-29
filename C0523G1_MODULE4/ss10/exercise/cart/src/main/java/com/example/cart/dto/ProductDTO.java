@@ -1,5 +1,7 @@
 package com.example.cart.dto;
 
+import java.util.Objects;
+
 public class ProductDTO {
     private int id;
     private String nameProduct;
@@ -87,5 +89,18 @@ public class ProductDTO {
 
     public void setImages(String images) {
         this.images = images;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductDTO that = (ProductDTO) o;
+        return id == that.id && Double.compare(that.listedPrice, listedPrice) == 0 && Double.compare(that.salePrice, salePrice) == 0 && quantity == that.quantity && Objects.equals(nameProduct, that.nameProduct) && Objects.equals(describer, that.describer) && Objects.equals(promotion, that.promotion) && Objects.equals(images, that.images);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nameProduct, listedPrice, salePrice, describer, quantity, promotion, images);
     }
 }

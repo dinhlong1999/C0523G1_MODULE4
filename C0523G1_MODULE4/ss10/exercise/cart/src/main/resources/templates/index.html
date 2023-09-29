@@ -31,10 +31,10 @@
 </head>
 <body>
 <div class="container">
-    <h2>Tiệm giày nhỏ
-            <i style="color: black" class='bx bxs-cart-alt'></i>
+    <h2>TIỆM GIÀY NHỎ
+           <a th:href="@{/cart}"> <i style="color: black" class='bx bxs-cart-alt'></i></a>
             <span style="margin: 14px -127px;font-size: 11px;"
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" th:text="${cart.countItemQuantity()}">
         </span>
     </h2>
 
