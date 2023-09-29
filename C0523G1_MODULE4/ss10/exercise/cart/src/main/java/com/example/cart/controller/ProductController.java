@@ -40,14 +40,20 @@ public class ProductController {
         return "detail";
     }
     @GetMapping("/addCart")
-    public String addToCart(@RequestParam int id, @SessionAttribute(value = "cart") CartDTO cartDTO){
+    public String addToCart(@RequestParam int id, @RequestParam String action, @SessionAttribute(value = "cart") CartDTO cartDTO){
         Product product = productService.findById(id);
-        if (product != null){
+        if (product != null || action.equals("show")){
             ProductDTO productDTO = new ProductDTO();
             BeanUtils.copyProperties(product,productDTO);
             cartDTO.addProduct(productDTO);
 
         }
+//        if (action.equals("show")){
+//            ProductDTO productDTO = new ProductDTO();
+//            BeanUtils.copyProperties(product,productDTO);
+//            cartDTO.addProduct(productDTO);
+//
+//        }
         return "redirect:/cart";
     }
     @GetMapping("/remove")

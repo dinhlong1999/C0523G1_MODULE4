@@ -46,14 +46,19 @@
             <td>Hình ảnh</td>
             <td>Giá </td>
             <td>Số lượng</td>
-            <td></td>
+            <td>Xoá</td>
         </tr>
         <tr th:each="product,status: ${cart.getProductDTOs()}">
             <td th:text="${status.count}"></td>
             <td th:text="${product.key.getNameProduct()}"></td>
             <td><img th:src="${product.key.getImages()}"></td>
             <td th:text="${product.key.getSalePrice()}"></td>
-            <td th:text="${product.getValue()}"></td>
+            <td>
+
+                <span th:text="${product.getValue()}"></span>
+                <a id="increase_button" th:href="@{/product/addCart(id=${product.key.getId()},action='show')}"
+                   th:text="${'+'}"></a>
+            </td>
             <td><a class="btn btn-outline-danger" th:href="@{/product/remove/(id=${product.key.getId()})}"><i style="font-size: 20px" class='bx bxs-trash'></i></a></td>
         </tr>
         <tr>
