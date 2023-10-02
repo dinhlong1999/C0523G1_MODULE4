@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/code.jquery.com_jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+
+<table border="1px">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Nội dung</th>
+        <th>Thể loại</th>
+    </tr>
+    </thead>
+    <tbody id="content">
+
+    </tbody>
+</table>
+<button id="btn-more">Hiển thị thêm</button>
+<!--tìm kiếm theo tên-->
+<label>Tìm kiếm</label>
+<input type="text" id="nameSearch" placeholder="Nhập tên cần tìm">
+<button id="search">Tìm </button>
+<table border="1px">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Nội dung</th>
+        <th>Thể loại</th>
+    </tr>
+    </thead>
+    <tbody id="result">
+
+    </tbody>
+</table>
+
+
+<script>
+    let page = 0;
+    $(document).ready(function () {
+        display();
+        $("#btn-more").click(function () {
+            display();
+        })
+        $("#search").click(function () {
+            search();
+        })
+    })
+    function display() {
+        let content ="";
+        $.ajax({
+            contentType: "application/json",
+            method: "GET",
+            url: `http://localhost:8080/api/blog?page=${page++}`,
+            success:function (data) {
+               for (let i=0; i <data.content.length;i++){
+
+                   content +=`<tr>
+                                      <td>${i+1}</td>
+                                      <td>${data.content[i].name}</td>
+                                      <td>${data.content[i].content}</td>
+                                      <td>${data.content[i].category}</td>
+
+                                </tr>`
+               }
+               $("#content").append(content);
+            },
+            catch: function () {
+                console.log("Lỗi")
+
+            }
+        })
+    }
+    function search() {
+        let search = $('#nameSearch').val();
+        let content ="";
+        $.ajax({
+            contentType: "application/json",
+            method: "GET",
+            url: `http://localhost:8080/api/blog/search?name=${search}`,
+            success:function (data){
+                for (let i=0; i <data.length;i++){
+                    content +=`<tr>
+                                      <td>${i+1}</td>
+                                      <td>${data[i].name}</td>
+                                      <td>${data[i].content}</td>
+                                      <td>${data[i].category}</td>
+
+                                </tr>`
+                }
+                $("#result").html(content);
+            },
+            catch: function () {
+                console.log("Lỗi")
+            }
+        })
+    }
+</script>
+</body>
+</html>
