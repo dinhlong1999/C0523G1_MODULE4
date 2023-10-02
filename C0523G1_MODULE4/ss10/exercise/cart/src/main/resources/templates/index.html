@@ -33,11 +33,13 @@
 <div class="container">
     <h2>TIỆM GIÀY NHỎ
            <a th:href="@{/cart}"> <i style="color: black" class='bx bxs-cart-alt'></i></a>
-            <span style="margin: 14px -127px;font-size: 11px;"
+            <span style="margin: 14px -312px;font-size: 11px;"
                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" th:text="${cart.countItemQuantity()}">
         </span>
     </h2>
-
+    <div th:if="${message}">
+        <span th:text="${message}" style="color: red"></span>
+    </div>
     <div class="row">
          <div class="col-md-3" th:each="product: ${productList}">
              <div class="card" style="width: 100%;height: 600px" >

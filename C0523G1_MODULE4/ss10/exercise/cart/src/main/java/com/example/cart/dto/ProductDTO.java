@@ -96,11 +96,11 @@ public class ProductDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductDTO that = (ProductDTO) o;
-        return id == that.id && Double.compare(that.listedPrice, listedPrice) == 0 && Double.compare(that.salePrice, salePrice) == 0 && quantity == that.quantity && Objects.equals(nameProduct, that.nameProduct) && Objects.equals(describer, that.describer) && Objects.equals(promotion, that.promotion) && Objects.equals(images, that.images);
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nameProduct, listedPrice, salePrice, describer, quantity, promotion, images);
+        return Objects.hash(id);
     }
 }
