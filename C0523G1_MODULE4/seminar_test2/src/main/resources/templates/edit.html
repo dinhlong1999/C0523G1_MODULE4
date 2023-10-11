@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/edit}" method="post" th:object="${pigDTO}">
+  <table>
+    <tr>
+      <input type="hidden" th:field="*{id}">
+      <th>Mã heo:</th>
+      <td>
+        <input type="text" th:field="*{codePig}">
+      </td>
+    </tr>
+    <tr>
+      <th>Ngày nhập: </th>
+      <td>
+        <input  th:field="*{timeInput}">
+      </td>
+    </tr>
+    <tr>
+      <th>Trọng lượng khi nhập: </th>
+      <td>
+        <input type="text" th:field="*{weight}"><br>
+        <small style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{weight}"></small>
+      </td>
+    </tr>
+    <tr>
+      <th>Ngày xuất: </th>
+      <td>
+        <input  th:field="*{timeOutput}">
+      </td>
+    </tr>
+    <tr>
+      <th>Trọng lượng khi xuất: </th>
+      <td>
+        <input type="text" th:field="*{weightOut}">
+      </td>
+    </tr>
+    <tr>
+      <th>Xuất xứ:</th>
+      <td>
+        <select th:field="*{origin}">
+          <option th:each="origin:${originList}" th:value="${origin.id}" th:text="${origin.name}"></option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a class="btn btn-primary" th:href="@{/}" role="button">Đóng</a>
+      </td>
+      <th>
+        <input type="submit" value="Sửa">
+      </th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -39,8 +39,14 @@
 
     </tbody>
 </table>
-
-
+<h3>Thêm mới</h3>
+<label>Nhập tên</label>
+<input type="text" id="name"><br>
+<label>Nội dung bài viết</label>
+<input type="text" id="contentNew"><br>
+<label>Thể loại</label>
+<input type="text" id="category">
+<button id="create" type="submit">Thêm mới</button>
 <script>
     let page = 0;
     $(document).ready(function () {
@@ -50,6 +56,17 @@
         })
         $("#search").click(function () {
             search();
+        });
+        $("#create").click(function (){
+            let name = $("#name").val();
+            let contentNew = $("#contentNew").val();
+            let category = $("#category").val();
+            const blog = {
+                name: name,
+                content: contentNew,
+                category: category
+            }
+            add(blog);
         })
     })
     function display() {
@@ -98,6 +115,18 @@
             },
             catch: function () {
                 console.log("Lỗi")
+            }
+        })
+    }
+    function add(blog) {
+        $.ajax({
+            contentType :"application/json",
+            method: "POST",
+            dataType : "JSON",
+            data :JSON.stringify(blog),
+            url: `http://localhost:8080/api/blog`,
+            complete:function (){
+                display();
             }
         })
     }

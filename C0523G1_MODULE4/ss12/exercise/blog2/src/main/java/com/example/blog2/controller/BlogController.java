@@ -40,4 +40,13 @@ public class BlogController {
             }
             return new ResponseEntity<>(blogList,HttpStatus.OK);
     }
+
+    @PostMapping
+    public ResponseEntity<?> saveBlog(@RequestBody Blog blog){
+        if (blog == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        blogService.saveBlog(blog);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 }

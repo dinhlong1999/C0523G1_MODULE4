@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bb7514b7-2b3c-4c10-98a1-3a469f0ad4df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/java/com/example/exercise1/Controller/ExchangeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/java/com/example/exercise1/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/java/com/example/exercise1/Service/ExchangeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/webapp/WEB-INF/views/calculator.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise1/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/java/com/example/exercise2/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/java/com/example/exercise2/controller/DictionaryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/java/com/example/exercise2/service/DictionaryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/webapp/WEB-INF/views/result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/exercise/exercise2/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/practice/practice1/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/practice/practice2/src/main/java/com/example/practice2/Controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/practice/practice2/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss01/exercise/exercise2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss01/exercise/exercise2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/exercise/product-managerment/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/exercise/product-managerment/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/exercise/product-managerment/src/main/java/com/example/productmanagerment/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/exercise/product-managerment/src/main/java/com/example/productmanagerment/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/practice/customer-management-thymeleaf/src/main/java/com/example/customermanagementthymeleaf/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/practice/customer-management-thymeleaf/src/main/java/com/example/customermanagementthymeleaf/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/practice/customer-management-thymeleaf/src/main/java/com/example/customermanagementthymeleaf/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss03/practice/customer-management-thymeleaf/src/main/java/com/example/customermanagementthymeleaf/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss05/practice/demo/src/main/java/com/example/demo/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss05/practice/demo/src/main/java/com/example/demo/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss05/practice/demo/src/main/java/com/example/demo/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss05/practice/demo/src/main/java/com/example/demo/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss05/practice/demo/src/main/resources/hibernate.conf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss05/practice/demo/src/main/resources/hibernate.conf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/exercise/blog/src/main/java/com/example/blog/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/exercise/blog/src/main/java/com/example/blog/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C0523G1_MODULE4/ss06/practice/practice1/src/main/java/com/example/practice1/config/AppInitializer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2VsCGPQvUEMStLooHUUy1Xeqp0l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb7514b7-2b3c-4c10-98a1-3a469f0ad4df" name="Changes" comment="" />
+      <created>1695615307436</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695615307436</updated>
+      <workItem from="1695615308424" duration="95000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

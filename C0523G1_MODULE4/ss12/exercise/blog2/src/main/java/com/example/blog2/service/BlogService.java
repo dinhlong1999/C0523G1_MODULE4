@@ -25,4 +25,9 @@ public class BlogService  implements IBlogService{
      public List<Blog> findBlogByNameContaining(String name){
         return blogRepository.findBlogByNameContaining(name);
     }
+
+    @Override
+    public void saveBlog(Blog blog) {
+        blogRepository.save(blog);
+    }
 }

@@ -25,6 +25,11 @@ public class CarService implements ICarService{
     }
 
     @Override
+    public void delete(int id) {
+        carRepository.deleteById(id);
+    }
+
+    @Override
     public Page<Car> findCarByNameContaining(Pageable pageable, String name) {
         return carRepository.findCarByNameContaining(pageable,name);
     }

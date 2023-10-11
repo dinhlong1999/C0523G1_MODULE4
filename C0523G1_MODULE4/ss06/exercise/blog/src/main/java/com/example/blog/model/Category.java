@@ -11,13 +11,16 @@ public class Category {
     @Column(name = "category_name")
     private String name;
 
+
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<Blog> blogList;
+
+
     public Category(int id, String name) {
         this.id = id;
         this.name = name;
     }
-
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<Blog> blogList;
 
     public Category() {
     }

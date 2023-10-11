@@ -10,6 +10,7 @@ public interface ICarService {
     List<Car> findAll();
 
     void save(Car car);
+    void delete(int id);
     Page<Car> findCarByNameContaining(Pageable pageable, String name);
 
 }

@@ -10,4 +10,6 @@ public interface IBlogService {
    Page<Blog> findAll(Pageable pageable);
 
    List<Blog> findBlogByNameContaining(String name);
+
+   void saveBlog(Blog blog);
 }

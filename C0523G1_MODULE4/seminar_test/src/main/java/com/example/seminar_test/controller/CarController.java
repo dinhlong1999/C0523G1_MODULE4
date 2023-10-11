@@ -15,10 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -53,19 +50,26 @@ public class CarController {
     @GetMapping("/create")
     public String showFormCreate(Model model){
         List<TypeCar> typeCarList = typeCarService.showListType();
-        model.addAttribute("CarDTO",new CarDTO());
+        model.addAttribute("carDTO",new CarDTO());
         model.addAttribute("typeCarList",typeCarList);
         return "showFormCreate";
     }
     @PostMapping("/create")
-    public String save(@Valid @ModelAttribute CarDTO carDTO, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
+    public String save(@Valid CarDTO carDTO , BindingResult bindingResult, Model  model, RedirectAttributes redirectAttributes){
         if (bindingResult.hasErrors()){
+            List<TypeCar> typeCarList = typeCarService.showListType();
+            model.addAttribute("typeCarList",typeCarList);
             return "showFormCreate";
         }
         Car car = new Car();
         BeanUtils.copyProperties(carDTO,car);
         carService.save(car);
         redirectAttributes.addFlashAttribute("message","ok");
+        return "redirect:/";
+    }
+    @PostMapping("/delete")
+    public String delete(@RequestParam int idDelete, RedirectAttributes redirectAttributes){
+        carService.delete(idDelete);
         return "redirect:/";
     }
 }
