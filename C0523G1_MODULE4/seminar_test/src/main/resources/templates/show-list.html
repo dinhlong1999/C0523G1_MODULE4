@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/create/}">Thêm mới</a>
+
+<form th:action="@{/}" method="get">
+    <label for="name">Nhập tên search</label>
+    <input type="text" name="nameSearch" id="name">
+    <input type="submit" value="gửi">
+</form>
+
+<table border="1px">
+    <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Hãng</th>
+        <th>Mô tả</th>
+        <th>Loại xe</th>
+    </tr>
+    <tr th:each="car,status: ${showListPage}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${car.name}"></td>
+        <td th:text="${car.producer}"></td>
+        <td th:text="${car.describer}"></td>
+        <td th:text="${car.typeCar.name}"></td>
+    </tr>
+</table>
+<a th:if="${showListPage.hasPrevious()}" th:href="@{/(page=${showListPage.number-1},nameSearch=${nameSearch})}">Previous</a>
+<span th:text="${showListPage.number+1}"></span>/<span th:text="${showListPage.totalPages}"></span>
+<a th:if="${showListPage.hasNext()}" th:href="@{/(page=${showListPage.number+1},nameSearch=${nameSearch})}">Next</a>
+</body>
+</html>

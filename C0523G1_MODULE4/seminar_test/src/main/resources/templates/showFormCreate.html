@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        small{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/create}" method="post" th:object="${CarDTO}">
+  <label for="name">Tên</label>
+  <input type="text" th:field="*{name}" id="name"><br>
+    <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+  <label for="producer">Tên</label>
+  <input type="text" th:field="*{producer}" id="producer"><br>
+    <small th:if="${#fields.hasErrors('producer')}" th:errors="*{producer}"></small>
+  <label for="describer">Tên</label>
+  <input type="text" th:field="*{describer}" id="describer"><br>
+    <label>Loại xe</label>
+    <select th:field="*{typeCar}">
+        <option th:each="type:${typeCarList}" th:value="${type.id}" th:text="${type.name}"></option>
+    </select>
+    <input type="submit" value="ADD">
+</form>
+</body>
+</html>
